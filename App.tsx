@@ -6,15 +6,12 @@
  */
 
 import React from "react";
-import StackNavigation from "./src/routing/StackNavigation";
-import { NavigationContainer } from "@react-navigation/native";
+import AuthProvider from "./src/routing/AuthProvider";
 
 const App = () => {
 
   return (
-      <NavigationContainer>
-        <StackNavigation/>
-      </NavigationContainer>
+    <AuthProvider/>
   );
 }
 

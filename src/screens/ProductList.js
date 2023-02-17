@@ -2,6 +2,7 @@ import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react
 import React, { useEffect, useState } from "react";
 import { themeColor } from "../assets/CustomColors";
 import { getAllProducts } from "../store/client/products";
+import AppContainer from "../components/AppContainer";
 
 const ProductList = (props) => {
 
@@ -11,12 +12,12 @@ const ProductList = (props) => {
     getAllProducts().then(res => setData(res))
   },[]);
 
-  const onPressDetail = () => {
-    props.navigation.navigate('ProductDetail')
+  const onPressDetail = (item) => {
+    props.navigation.navigate('ProductDetail', {data: item})
   }
 
   const renderItem = ({ item }) => {
-    return <TouchableOpacity onPress={onPressDetail} style={styles.itemContainer}>
+    return <TouchableOpacity onPress={() =>onPressDetail(item)} style={styles.itemContainer}>
       <Image style={styles.image} source={{uri: item.image}} resizeMode="contain" />
       <View style={styles.titleContainer}>
         <Text style={styles.itemTitle}>{item.title}</Text>
@@ -36,9 +37,9 @@ const ProductList = (props) => {
   }
 
   return (
-    <View>
+    <AppContainer>
       <FlatList data={data} renderItem={renderItem} horizontal={false} numColumns={2}/>
-    </View>
+    </AppContainer>
   );
 };
 
