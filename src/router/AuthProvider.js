@@ -4,6 +4,7 @@ import auth from '@react-native-firebase/auth';
 import { NavigationContainer } from "@react-navigation/native";
 import StackNavigation from "./StackNavigation";
 import RootNavigation from "./RootNavigation";
+import { ToastProvider } from 'react-native-toast-notifications'
 
 function AuthProvider() {
   // Set an initializing state whilst Firebase connects
@@ -33,7 +34,9 @@ function AuthProvider() {
 
   return (
       <NavigationContainer>
-        <StackNavigation/>
+        <ToastProvider>
+          <StackNavigation/>
+        </ToastProvider>
       </NavigationContainer>
   );
 }

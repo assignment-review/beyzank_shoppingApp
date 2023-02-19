@@ -1,13 +1,16 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ProductList from "../screens/ProductList";
-import Basket from "../screens/Basket";
 import Profile from "../screens/Profile";
-import FontAwesome5 from 'react-native-vector-icons/Ionicons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { themeColor } from "../assets/CustomColors";
+import { useSelector } from "react-redux";
+import Cart from "../screens/Cart";
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
+
+  const {quantity} = useSelector(state => state.cart)
 
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
@@ -16,7 +19,7 @@ const Tabs = () => {
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
 
-        if (route.name === 'Basket') {
+        if (route.name === 'Cart') {
           iconName = focused
             ? 'basket'
             : 'basket';
@@ -27,13 +30,13 @@ const Tabs = () => {
           iconName = focused ? 'home' : 'home';
 
         // You can return any component that you like here!
-        return <FontAwesome5 name={iconName} size={size} color={color} />;
+        return <Ionicons name={iconName} size={size} color={color} />;
       },
       tabBarActiveTintColor: themeColor,
       tabBarInactiveTintColor: 'gray',
     })}>
-      <Tab.Screen name="ProductList" component={ProductList} />
-      <Tab.Screen name="Basket" component={Basket} />
+      <Tab.Screen name="Home" component={ProductList} />
+      <Tab.Screen name="Cart" component={Cart}  options={{ tabBarBadge: quantity > 0 ? quantity : null}} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );

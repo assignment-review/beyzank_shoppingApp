@@ -6,12 +6,16 @@
  */
 
 import React from "react";
-import AuthProvider from "./src/routing/AuthProvider";
+import AuthProvider from "./src/router/AuthProvider";
+import {store} from "./src/store/index";
+import { Provider } from 'react-redux'
 
 const App = () => {
 
   return (
-    <AuthProvider/>
+    <Provider store={store}>
+      <AuthProvider/>
+    </Provider>
   );
 }
 

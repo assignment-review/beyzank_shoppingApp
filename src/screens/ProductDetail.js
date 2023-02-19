@@ -1,30 +1,37 @@
-import { Dimensions, Image, Text, TouchableOpacity, View } from "react-native";
-import { logout } from "../store/client/auth";
-import React from "react";
+import { Image, ScrollView, Text } from "react-native";
+import React  from "react";
 import AppContainer from "../components/AppContainer";
 import { themeColor } from "../assets/CustomColors";
+import PriceBottom from "../components/PriceBottom";
+import { addItemToCart } from "../store/slices/cartSlice";
+import { useDispatch } from "react-redux";
+import { useToast } from "react-native-toast-notifications";
 
 const ProductDetail = (props) => {
 
   const data = props.route.params?.data;
+  const dispatch = useDispatch();
+  const toast = useToast();
 
-  const onPress = () => {
-    logout()
+  const onPressAddButton = (item) => {
+
+    dispatch(addItemToCart(item))
+    props.navigation.navigate("Cart")
+    toast.show(item.title +   " added to cart", {
+      type:"success",
+      placement: "center",
+      duration:1200
+    })
   }
 
   return (
     <AppContainer>
-      <Image style={styles.image} source={{uri: data?.image}} resizeMode="contain" />
-      <Text style={styles.title}>{data.title}</Text>
-      <Text style={styles.desc}>{data.description}</Text>
-
-      <View style={styles.bottom}>
-        <Text style={styles.title}>{data.price} TL</Text>
-
-        <TouchableOpacity onPress={onPress} style={styles.button}>
-          <Text style={styles.buttonText}>Sepete Ekle</Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView>
+        <Image style={styles.image} source={{uri: data?.image}} resizeMode="contain" />
+        <Text style={styles.title}>{data.title}</Text>
+        <Text style={styles.desc}>{data.description}</Text>
+      </ScrollView>
+      <PriceBottom price={data.price} onPress={() => onPressAddButton(data)} text="Add to Cart"/>
     </AppContainer>
   );
 };
@@ -37,9 +44,6 @@ const styles = {
     width: "85%",
     height: 300,
     alignSelf: "center",
-    borderColor: themeColor,
-    borderWidth:2,
-    borderRadius:4,
     marginVertical: 30,
   },
   title:{
@@ -50,39 +54,10 @@ const styles = {
   },
   desc:{
     color: "#414141",
-    marginVertical: 20,
-    marginHorizontal: 20
+    marginHorizontal: 20,
+    marginTop: 20,
+    marginBottom: 100
   },
-  bottom: {
-    width: Dimensions.get("window").width,
-    height: 80,
-    borderWidth:1,
-    borderBottomWidth:0,
-    borderColor: "#aeaeae",
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-    position: "absolute",
-    bottom: 0,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around"
-  },
-  button: {
-    borderColor: themeColor,
-    backgroundColor: themeColor,
-    borderRadius: 20,
-    borderWidth: 1,
-    height: 50,
-    width: "40%",
-    alignSelf: "center",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  buttonText: {
-    color: "white",
-    fontSize:16,
-    fontWeight: "bold"
-  }
 }
 
 export default ProductDetail;

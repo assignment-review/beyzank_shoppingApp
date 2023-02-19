@@ -3,10 +3,14 @@ import React, { useEffect, useState } from "react";
 import { themeColor } from "../assets/CustomColors";
 import { getAllProducts } from "../store/client/products";
 import AppContainer from "../components/AppContainer";
-
+import {useDispatch} from 'react-redux';
+import { addItemToCart } from "../store/slices/cartSlice";
+import { useToast } from "react-native-toast-notifications";
 const ProductList = (props) => {
 
   const [data, setData] = useState(null);
+  const dispatch = useDispatch();
+  const toast = useToast();
 
   useEffect(() => {
     getAllProducts().then(res => setData(res))
@@ -24,7 +28,7 @@ const ProductList = (props) => {
       </View>
       <View style={styles.bottom}>
         <Text style={styles.itemPrice}>{item.price} ₺</Text>
-        <TouchableOpacity onPress={AddToBasket} style={styles.addButton}>
+        <TouchableOpacity onPress={() =>AddToCart(item)} style={styles.addButton}>
           <Text style={styles.addButtonText}>Add Basket</Text>
         </TouchableOpacity>
       </View>
@@ -32,13 +36,18 @@ const ProductList = (props) => {
     </TouchableOpacity>
   }
 
-  const AddToBasket = () => {
-    console.log("eklendi.");
-  }
+  const AddToCart = (item) => {
+    dispatch(addItemToCart(item))
+    props.navigation.navigate("Cart")
+    toast.show(item.title +   " added to cart", {
+      type:"success",
+      placement: "center",
+      duration:1200
+    })  }
 
   return (
     <AppContainer>
-      <FlatList data={data} renderItem={renderItem} horizontal={false} numColumns={2}/>
+      <FlatList data={data} keyExtractor={item => item.id} renderItem={renderItem} horizontal={false} numColumns={2}/>
     </AppContainer>
   );
 };
