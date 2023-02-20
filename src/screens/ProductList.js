@@ -56,9 +56,10 @@ const styles = StyleSheet.create({
   itemContainer: {
     width:"44%",
     margin:"3%",
+    alignItems: "center",
     borderRadius:6,
     padding:10,
-    borderWidth: 0.2,
+    borderWidth: 0.6,
     borderColor: "#e0ecde",
   },
   image: {
@@ -71,7 +72,8 @@ const styles = StyleSheet.create({
   },
   itemTitle: {
     fontSize: 14,
-    color: "#468189",
+    color: "#676767",
+    textAlign: "left",
     marginTop: 15,
   },
   bottom: {

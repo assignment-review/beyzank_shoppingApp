@@ -126,7 +126,7 @@ const styles = {
     marginHorizontal: 15
   },
   buttons:{
-    backgroundColor: "#f5d1ab",
+    backgroundColor: "#d1d6e7",
     fontSize:18,
      paddingHorizontal: 10,
     paddingVertical:5,

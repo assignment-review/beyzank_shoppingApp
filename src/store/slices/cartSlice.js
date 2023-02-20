@@ -7,8 +7,8 @@ const initialState = {
   total: 0,
 }
 
-export const AppSlice = createSlice({
-  name: 'app',
+export const CartSlice = createSlice({
+  name: 'cart',
   initialState,
   reducers: {
     addItemToCart: (state, action) => {
@@ -57,6 +57,6 @@ export const AppSlice = createSlice({
     }
 }})
 
-export const { addItemToCart, removeItemFromCart, decreaseItem, confirmCart } = AppSlice.actions
+export const { addItemToCart, removeItemFromCart, decreaseItem, confirmCart } = CartSlice.actions
 
-export default AppSlice.reducer
+export default CartSlice.reducer

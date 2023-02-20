@@ -5,21 +5,25 @@ import { NavigationContainer } from "@react-navigation/native";
 import StackNavigation from "./StackNavigation";
 import RootNavigation from "./RootNavigation";
 import { ToastProvider } from 'react-native-toast-notifications'
+import { useDispatch } from "react-redux";
+import { saveUserInfo } from "../store/slices/authSlice";
 
 function AuthProvider() {
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
+  const dispatch = useDispatch();
 
   // Handle user state changes
   function onAuthStateChanged(user) {
+    dispatch(saveUserInfo(user))
     setUser(user);
     if (initializing) setInitializing(false);
   }
 
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-    return subscriber; // unsubscribe on unmount
+    return subscriber;
   }, []);
 
   if (initializing) return <Text>Loading</Text>;

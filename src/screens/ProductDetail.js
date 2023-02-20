@@ -6,6 +6,7 @@ import PriceBottom from "../components/PriceBottom";
 import { addItemToCart } from "../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { useToast } from "react-native-toast-notifications";
+import Comments from "../components/Comments";
 
 const ProductDetail = (props) => {
 
@@ -30,6 +31,7 @@ const ProductDetail = (props) => {
         <Image style={styles.image} source={{uri: data?.image}} resizeMode="contain" />
         <Text style={styles.title}>{data.title}</Text>
         <Text style={styles.desc}>{data.description}</Text>
+        <Comments data={data}/>
       </ScrollView>
       <PriceBottom price={data.price} onPress={() => onPressAddButton(data)} text="Add to Cart"/>
     </AppContainer>
@@ -56,7 +58,7 @@ const styles = {
     color: "#414141",
     marginHorizontal: 20,
     marginTop: 20,
-    marginBottom: 100
+    marginBottom: 30
   },
 }
 
