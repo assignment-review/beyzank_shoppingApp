@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, Text, View } from "react-native";
+import { ActivityIndicator, Text, View } from "react-native";
 import AddComment from "./AddComment";
 import firestore from "@react-native-firebase/firestore";
 import { themeColor } from "../assets/CustomColors";
@@ -27,9 +27,8 @@ const Comments = (props) => {
         setLoading(false);
       });
 
-    // Unsubscribe from events when no longer in use
-    return () => subscriber();
-  }, []);
+    return () => subscriber;
+  }, [comments]);
 
   if (loading) {
     return <ActivityIndicator />;
@@ -38,16 +37,16 @@ const Comments = (props) => {
   return (
     <>
       <Text style={styles.title}>COMMENTS</Text>
-      <FlatList
-        data={comments}
-        renderItem={({ item }) => (
-          <View style={styles.commentContainer}>
+      {
+        comments.map(item => {
+          return <View style={styles.commentContainer}>
             <Text>{item.comment}</Text>
             <Text style={styles.email}>{item.userId}</Text>
           </View>
-        )}
-      />
-      <AddComment itemId={props.data.id}/></>
+        })
+      }
+      <AddComment itemId={props.data.id}/>
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
-import { Image, ScrollView, Text } from "react-native";
-import React  from "react";
+import { Image, ScrollView, Text, View } from "react-native";
+import React from "react";
 import AppContainer from "../components/AppContainer";
 import { themeColor } from "../assets/CustomColors";
 import PriceBottom from "../components/PriceBottom";
@@ -31,7 +31,9 @@ const ProductDetail = (props) => {
         <Image style={styles.image} source={{uri: data?.image}} resizeMode="contain" />
         <Text style={styles.title}>{data.title}</Text>
         <Text style={styles.desc}>{data.description}</Text>
-        <Comments data={data}/>
+        <View>
+          <Comments data={data}/>
+        </View>
       </ScrollView>
       <PriceBottom price={data.price} onPress={() => onPressAddButton(data)} text="Add to Cart"/>
     </AppContainer>

@@ -8,8 +8,4 @@ export const addNewComment =  (comment, id, user) => {
       itemId: id,
       userId: user.providerData[0].uid
     })
-    .then(() => {
-      console.log('Comment added!');
-    });
-
 }
