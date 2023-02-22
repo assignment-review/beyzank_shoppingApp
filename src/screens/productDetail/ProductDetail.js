@@ -1,12 +1,12 @@
 import { Image, ScrollView, Text, View } from "react-native";
 import React from "react";
-import AppContainer from "../components/AppContainer";
-import { themeColor } from "../assets/CustomColors";
-import PriceBottom from "../components/PriceBottom";
-import { addItemToCart } from "../store/slices/cartSlice";
+import AppContainer from "../../components/AppContainer";
+import { themeColor } from "../../assets/CustomColors";
+import PriceBottom from "../../components/PriceBottom";
+import { addItemToCart } from "../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { useToast } from "react-native-toast-notifications";
-import Comments from "../components/Comments";
+import Comments from "./components/Comments";
 
 const ProductDetail = (props) => {
 

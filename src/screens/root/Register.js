@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 import React, { useState } from "react";
-import { register } from "../store/client/auth.service";
-import CustomButton from "../components/CustomButton";
-import CustomTextInput from "../components/CustomTextInput";
-import { themeColor } from "../assets/CustomColors";
+import { register } from "../../store/client/auth.service";
+import CustomButton from "../../components/CustomButton";
+import CustomTextInput from "../../components/CustomTextInput";
+import { themeColor } from "../../assets/CustomColors";
 
 const Register = () => {
 
@@ -14,7 +14,7 @@ const Register = () => {
   const onPress = () => {
     if(email === "" || password === "" || passwordAgain === "")
       alert("Please fill in all blank fields!")
-    if(password !== passwordAgain)
+    else if(password !== passwordAgain)
       alert("The passwords you entered do not match!")
     else
       register(email, password)

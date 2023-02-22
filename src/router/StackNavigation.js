@@ -1,4 +1,4 @@
-import ProductDetail from "../screens/ProductDetail";
+import ProductDetail from "../screens/productDetail/ProductDetail";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Tabs from "./Tabs";
 

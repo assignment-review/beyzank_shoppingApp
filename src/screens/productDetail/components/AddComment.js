@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { TextInput, View } from "react-native";
-import { addNewComment } from "../store/client/comments.service";
+import { addNewComment } from "../../../store/client/comments.service";
 import { useSelector } from "react-redux";
 import { useToast } from "react-native-toast-notifications";
-import CustomButton from "./CustomButton";
+import CustomButton from "../../../components/CustomButton";
 
 const AddComment = (props) => {
   const [comment, setComment] = useState("");

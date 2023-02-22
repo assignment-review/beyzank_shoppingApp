@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Entypo from "react-native-vector-icons/Entypo";
 import React from "react";
-import CustomButton from "./CustomButton";
+import CustomButton from "../../../components/CustomButton";
 
 const EmptyCart = () => {
 

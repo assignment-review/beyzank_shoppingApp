@@ -1,9 +1,9 @@
 import { Text, TouchableOpacity, View } from "react-native";
-import { login } from "../store/client/auth.service";
+import { login } from "../../store/client/auth.service";
 import React, { useState } from "react";
-import CustomButton from "../components/CustomButton";
-import CustomTextInput from "../components/CustomTextInput";
-import { themeColor } from "../assets/CustomColors";
+import CustomButton from "../../components/CustomButton";
+import CustomTextInput from "../../components/CustomTextInput";
+import { themeColor } from "../../assets/CustomColors";
 
 const Login = (props) => {
 
@@ -26,9 +26,7 @@ const Login = (props) => {
       <CustomTextInput onChangeText={setEmail} value={email}/>
       <Text style={styles.titleText}>Password</Text>
       <CustomTextInput onChangeText={setPassword} value={password} secureTextEntry={true}/>
-
       <CustomButton text="LOGIN" onPress={onPressLogin}/>
-
       <TouchableOpacity onPress={onPress}>
         <Text style={styles.registerText}>Don't you have an account? Register now!</Text>
       </TouchableOpacity>

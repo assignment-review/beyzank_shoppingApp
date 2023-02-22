@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ProductList from "../screens/ProductList";
-import Profile from "../screens/Profile";
+import ProductList from "../screens/productList/ProductList";
+import Profile from "../screens/profile/Profile";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { themeColor } from "../assets/CustomColors";
 import { useSelector } from "react-redux";
-import Cart from "../screens/Cart";
+import Cart from "../screens/cart/Cart";
 
 const Tab = createBottomTabNavigator();
 

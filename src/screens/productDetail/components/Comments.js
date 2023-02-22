@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Text, View } from "react-native";
 import AddComment from "./AddComment";
 import firestore from "@react-native-firebase/firestore";
-import { themeColor } from "../assets/CustomColors";
+import { themeColor } from "../../../assets/CustomColors";
 
 const Comments = (props) => {
   const [comments, setComments] = useState([]);
