@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 import CustomButton from "../components/CustomButton";
-import { logout } from "../store/client/auth";
+import { logout } from "../store/client/auth.service";
 
 const Profile = () => {
   return (

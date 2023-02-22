@@ -3,3 +3,8 @@ export const getAllProducts = () => {
     .then(res=>res.json())
     return result;
 }
+const productService = {
+  getAllProducts
+}
+
+export default productService

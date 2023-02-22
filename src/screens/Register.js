@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 import React, { useState } from "react";
-import { register } from "../store/client/auth";
+import { register } from "../store/client/auth.service";
 import CustomButton from "../components/CustomButton";
 import CustomTextInput from "../components/CustomTextInput";
 import { themeColor } from "../assets/CustomColors";

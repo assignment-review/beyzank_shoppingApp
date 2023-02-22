@@ -13,22 +13,6 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1479E4CC299C31BB00121EF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4CB299C31BB00121EF4 /* GoogleService-Info.plist */; };
-		1479E4DD29A03E8F00121EF4 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4CD29A03E8F00121EF4 /* Zocial.ttf */; };
-		1479E4DE29A03E8F00121EF4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4CE29A03E8F00121EF4 /* FontAwesome.ttf */; };
-		1479E4DF29A03E8F00121EF4 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4CF29A03E8F00121EF4 /* FontAwesome5_Solid.ttf */; };
-		1479E4E029A03E8F00121EF4 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D029A03E8F00121EF4 /* Entypo.ttf */; };
-		1479E4E129A03E8F00121EF4 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D129A03E8F00121EF4 /* EvilIcons.ttf */; };
-		1479E4E229A03E8F00121EF4 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D229A03E8F00121EF4 /* Ionicons.ttf */; };
-		1479E4E329A03E8F00121EF4 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D329A03E8F00121EF4 /* Foundation.ttf */; };
-		1479E4E429A03E8F00121EF4 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D429A03E8F00121EF4 /* FontAwesome5_Brands.ttf */; };
-		1479E4E529A03E8F00121EF4 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D529A03E8F00121EF4 /* AntDesign.ttf */; };
-		1479E4E629A03E8F00121EF4 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D629A03E8F00121EF4 /* MaterialCommunityIcons.ttf */; };
-		1479E4E729A03E8F00121EF4 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D729A03E8F00121EF4 /* MaterialIcons.ttf */; };
-		1479E4E829A03E8F00121EF4 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D829A03E8F00121EF4 /* Octicons.ttf */; };
-		1479E4E929A03E8F00121EF4 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4D929A03E8F00121EF4 /* SimpleLineIcons.ttf */; };
-		1479E4EA29A03E8F00121EF4 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4DA29A03E8F00121EF4 /* FontAwesome5_Regular.ttf */; };
-		1479E4EB29A03E8F00121EF4 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4DB29A03E8F00121EF4 /* Feather.ttf */; };
-		1479E4EC29A03E8F00121EF4 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1479E4DC29A03E8F00121EF4 /* Fontisto.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-ShoppingApp-ShoppingAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ShoppingApp-ShoppingAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -70,6 +54,7 @@
 		1479E4DA29A03E8F00121EF4 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		1479E4DB29A03E8F00121EF4 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		1479E4DC29A03E8F00121EF4 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		14FF128529A521F20001C40C /* ShoppingApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ShoppingApp.entitlements; path = ShoppingApp/ShoppingApp.entitlements; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-ShoppingApp-ShoppingAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingApp-ShoppingAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-ShoppingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-ShoppingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp.release.xcconfig"; path = "Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +105,7 @@
 		13B07FAE1A68108700A75B9A /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				14FF128529A521F20001C40C /* ShoppingApp.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -294,24 +280,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1479E4DD29A03E8F00121EF4 /* Zocial.ttf in Resources */,
-				1479E4E329A03E8F00121EF4 /* Foundation.ttf in Resources */,
-				1479E4E029A03E8F00121EF4 /* Entypo.ttf in Resources */,
-				1479E4E229A03E8F00121EF4 /* Ionicons.ttf in Resources */,
-				1479E4DE29A03E8F00121EF4 /* FontAwesome.ttf in Resources */,
-				1479E4E429A03E8F00121EF4 /* FontAwesome5_Brands.ttf in Resources */,
-				1479E4E729A03E8F00121EF4 /* MaterialIcons.ttf in Resources */,
-				1479E4E529A03E8F00121EF4 /* AntDesign.ttf in Resources */,
-				1479E4EB29A03E8F00121EF4 /* Feather.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				1479E4EC29A03E8F00121EF4 /* Fontisto.ttf in Resources */,
-				1479E4DF29A03E8F00121EF4 /* FontAwesome5_Solid.ttf in Resources */,
-				1479E4E829A03E8F00121EF4 /* Octicons.ttf in Resources */,
-				1479E4E129A03E8F00121EF4 /* EvilIcons.ttf in Resources */,
-				1479E4E629A03E8F00121EF4 /* MaterialCommunityIcons.ttf in Resources */,
-				1479E4E929A03E8F00121EF4 /* SimpleLineIcons.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				1479E4EA29A03E8F00121EF4 /* FontAwesome5_Regular.ttf in Resources */,
 				1479E4CC299C31BB00121EF4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,7 +537,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ShoppingApp/ShoppingApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2B42456GUW;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ShoppingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -594,7 +566,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ShoppingApp/ShoppingApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2B42456GUW;
 				INFOPLIST_FILE = ShoppingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

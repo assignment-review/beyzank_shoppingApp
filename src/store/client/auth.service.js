@@ -45,3 +45,11 @@ export const logout = () => {
     .signOut()
     .then(() => console.log('User signed out!'));
 }
+
+const authService = {
+  register,
+  login,
+  logout
+}
+
+export default authService

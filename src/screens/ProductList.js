@@ -1,19 +1,19 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React, { useEffect, useState } from "react";
+import { ActivityIndicator, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React, { useEffect } from "react";
 import { themeColor } from "../assets/CustomColors";
-import { getAllProducts } from "../store/client/products";
 import AppContainer from "../components/AppContainer";
-import {useDispatch} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../store/slices/cartSlice";
 import { useToast } from "react-native-toast-notifications";
+import { fetchAllProducts } from "../store/slices/productSlice";
 const ProductList = (props) => {
 
-  const [data, setData] = useState(null);
   const dispatch = useDispatch();
+  const {products, loading} = useSelector(state => state.product)
   const toast = useToast();
 
   useEffect(() => {
-    getAllProducts().then(res => setData(res))
+    dispatch(fetchAllProducts());
   },[]);
 
   const onPressDetail = (item) => {
@@ -45,9 +45,14 @@ const ProductList = (props) => {
       duration:1200
     })  }
 
+  if(loading)
+    return <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+      <ActivityIndicator/>
+    </View>
+
   return (
     <AppContainer>
-      <FlatList data={data} keyExtractor={item => item.id} renderItem={renderItem} horizontal={false} numColumns={2}/>
+      <FlatList data={products} keyExtractor={item => item.id} renderItem={renderItem} horizontal={false} numColumns={2}/>
     </AppContainer>
   );
 };

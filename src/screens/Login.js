@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity, View } from "react-native";
-import { login } from "../store/client/auth";
+import { login } from "../store/client/auth.service";
 import React, { useState } from "react";
 import CustomButton from "../components/CustomButton";
 import CustomTextInput from "../components/CustomTextInput";

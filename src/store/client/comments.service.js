@@ -9,3 +9,8 @@ export const addNewComment =  (comment, id, user) => {
       userId: user.providerData[0].uid
     })
 }
+const commentService = {
+  addNewComment
+}
+
+export default commentService
