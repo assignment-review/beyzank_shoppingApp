@@ -9,9 +9,15 @@ const Register = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordAgain, setPasswordAgain] = useState("");
 
   const onPress = () => {
-    register(email, password)
+    if(email === "" || password === "" || passwordAgain === "")
+      alert("Please fill in all blank fields!")
+    if(password !== passwordAgain)
+      alert("The passwords you entered do not match!")
+    else
+      register(email, password)
   }
 
   return (
@@ -21,7 +27,7 @@ const Register = () => {
       <Text style={styles.titleText}>Password</Text>
       <CustomTextInput onChangeText={setPassword} value={password} secureTextEntry={true}/>
       <Text style={styles.titleText}>Password</Text>
-      <CustomTextInput onChangeText={setPassword} value={password} secureTextEntry={true}/>
+      <CustomTextInput onChangeText={setPasswordAgain} value={passwordAgain} secureTextEntry={true}/>
       <CustomButton text="REGISTER" onPress={onPress}/>
     </View>
   );

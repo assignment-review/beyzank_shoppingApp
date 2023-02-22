@@ -15,7 +15,10 @@ const Login = (props) => {
   }
 
   const onPressLogin = () => {
-    login(email, password)
+    if(email === "" || password === "")
+      alert("Please fill in all blank fields!");
+    else
+      login(email, password)
   }
   return (
     <View style={styles.container}>

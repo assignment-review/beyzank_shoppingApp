@@ -8,10 +8,12 @@ import { addItemToCart, decreaseItem, removeItemFromCart } from "../store/slices
 import ConfirmCartModal from "../components/modals/ConfirmCartModal";
 import PriceBottom from "../components/PriceBottom";
 import EmptyCart from "../components/EmptyCart";
+import { saveMyOrder } from "../store/client/products.service";
 
 const Cart = () => {
   const {cartItems} = useSelector(state => state.cart)
   const {total} = useSelector(state => state.cart)
+  const { user } = useSelector(state => state.auth)
   const dispatch = useDispatch();
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -31,6 +33,7 @@ const Cart = () => {
   }
 
   const confirmCart = () => {
+    saveMyOrder(cartItems, user)
     setModalVisible(true)
   }
 
